@@ -22,5 +22,22 @@ namespace Finance.Data
             string json = File.ReadAllText(_filePath);
             return JsonSerializer.Deserialize<List<Transaction>>(json);
         }
+
+        public void Add(Transaction transaction)
+        {
+            var transactions = LoadAll();
+            transactions.Add(transaction);
+            SaveAll(transactions);
+        }
+
+        public void SaveAll(List<Transaction> transactions)
+        {
+            string json = JsonSerializer.Serialize(transactions);
+        }
+
+        public void Clear()
+        {
+            File.WriteAllText(_filePath, "[]");
+        }
     }
 }
