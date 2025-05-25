@@ -123,6 +123,7 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Добавить операцию";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // button1
             // 

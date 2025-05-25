@@ -46,11 +46,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddTransacttion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddTransacttion.Designer.cs">
+      <DependentUpon>AddTransacttion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\History.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\History.Designer.cs">
+      <DependentUpon>History.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Main.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Main.Designer.cs">
       <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Report.Designer.cs">
+      <DependentUpon>Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Settings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Settings.Designer.cs">
+      <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

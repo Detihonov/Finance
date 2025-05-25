@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finance.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace Finance
         public Main()
         {
             InitializeComponent();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            using (var form = new AddTransacttion())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                {
+
+                }
+            }
         }
     }
 }
