@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Finance.Data
 {
-    internal class CategoryRepository
+    public class CategoryRepository
     {
+
     }
 }
