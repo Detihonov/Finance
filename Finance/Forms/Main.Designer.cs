@@ -35,9 +35,10 @@
             this.labelLastOperation = new System.Windows.Forms.Label();
             this.labelBalance = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnReport = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -98,13 +99,24 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnReport);
+            this.panel3.Controls.Add(this.btnSettings);
             this.panel3.Controls.Add(this.btnHistory);
             this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Location = new System.Drawing.Point(12, 169);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(339, 277);
             this.panel3.TabIndex = 1;
+            // 
+            // btnReport
+            // 
+            this.btnReport.Location = new System.Drawing.Point(3, 71);
+            this.btnReport.Name = "btnReport";
+            this.btnReport.Size = new System.Drawing.Size(333, 32);
+            this.btnReport.TabIndex = 0;
+            this.btnReport.Text = "Отчёт";
+            this.btnReport.UseVisualStyleBackColor = true;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // btnHistory
             // 
@@ -114,6 +126,7 @@
             this.btnHistory.TabIndex = 0;
             this.btnHistory.Text = "История";
             this.btnHistory.UseVisualStyleBackColor = true;
+            this.btnHistory.Click += new System.EventHandler(this.btnHistory_Click);
             // 
             // btnAdd
             // 
@@ -125,14 +138,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // button1
+            // btnSettings
             // 
-            this.button1.Location = new System.Drawing.Point(3, 71);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(333, 32);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "История";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSettings.Location = new System.Drawing.Point(3, 106);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(333, 32);
+            this.btnSettings.TabIndex = 0;
+            this.btnSettings.Text = "Настройки";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // Main
             // 
@@ -163,7 +177,8 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnHistory;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnReport;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
 

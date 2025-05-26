@@ -55,5 +55,24 @@ namespace Finance
                 }
             }
         }
+
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            var form = new History();
+            form.ShowDialog();
+            LoadTransaction();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            var form = new Report();
+            form.ShowDialog();
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            var form = new Settings();
+            form.ShowDialog();
+        }
     }
 }
