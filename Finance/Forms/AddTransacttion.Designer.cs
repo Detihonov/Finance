@@ -34,7 +34,7 @@
             this.coboxCategory = new System.Windows.Forms.ComboBox();
             this.coboxType = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.date = new System.Windows.Forms.DateTimePicker();
+            this.datePicker = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.textDescription = new System.Windows.Forms.TextBox();
@@ -94,7 +94,7 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.date);
+            this.panel2.Controls.Add(this.datePicker);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.textDescription);
@@ -104,12 +104,12 @@
             this.panel2.Size = new System.Drawing.Size(294, 85);
             this.panel2.TabIndex = 1;
             // 
-            // date
+            // datePicker
             // 
-            this.date.Location = new System.Drawing.Point(7, 56);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(200, 20);
-            this.date.TabIndex = 2;
+            this.datePicker.Location = new System.Drawing.Point(7, 56);
+            this.datePicker.Name = "datePicker";
+            this.datePicker.Size = new System.Drawing.Size(200, 20);
+            this.datePicker.TabIndex = 2;
             // 
             // label4
             // 
@@ -154,12 +154,13 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(8, 31);
+            this.btnCancel.Location = new System.Drawing.Point(101, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 0;
             this.btnCancel.Text = "Отмена";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnSave
             // 
@@ -169,6 +170,7 @@
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Сохранить";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AddTransacttion
             // 
@@ -199,7 +201,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox textSum;
-        private System.Windows.Forms.DateTimePicker date;
+        private System.Windows.Forms.DateTimePicker datePicker;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textDescription;
         private System.Windows.Forms.Panel panel3;
