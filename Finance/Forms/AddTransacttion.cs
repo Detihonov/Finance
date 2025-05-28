@@ -14,7 +14,20 @@ namespace Finance.Forms
     {
         public AddTransacttion()
         {
-            InitializeComponent();
+            InitializeComponent(); // Инициализатор формы
+            ComboTypeCategory();
+        }
+
+        private void ComboTypeCategory()
+        {
+            // Метод AddRange() добавляет массив элементов в коллекцию ComboBox за одну операцию.
+            // Это удобнее и эффективнее, чем добавлять элементы по одному через Add().
+            coboxType.Items.AddRange(new[] { "Доход", "Расход" });
+            // SelectedIndex — свойство, которое задает или возвращает индекс выбранного элемента в списке.
+            coboxType.SelectedIndex = 0;
+
+            coboxCategory.Items.AddRange(new[] { "Зарплата", "Транспорт", "Развлечения" });
+            coboxCategory.SelectedIndex = 0;
         }
     }
 }

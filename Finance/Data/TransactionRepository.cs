@@ -11,7 +11,7 @@ namespace Finance.Data
 {
     public class TransactionRepository
     {
-        private readonly string _filePath = "transaction.json";
+        private readonly string _filePath = @"Save\transaction.json";
         public List<Transaction> LoadAll()
         {
             if (!File.Exists(_filePath))

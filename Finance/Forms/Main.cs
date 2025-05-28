@@ -19,6 +19,7 @@ namespace Finance
         private TransactionRepository repository = new TransactionRepository();
         public Main()
         {
+            
             InitializeComponent();
         }
 
@@ -45,8 +46,16 @@ namespace Finance
             labelBalance.Text = $"Баланс: {balance:C}";
         }
 
+        // form.ShowDialog()
+        // Открывает форму в модальном режиме (блокирует взаимодействие с родительским окном до закрытия диалога).
+        // Возвращает значение типа DialogResult, которое указывает, как пользователь закрыл форму (например, OK, Cancel).
+
+        // DialogResult.OK
+        // Это стандартное значение, которое обычно возвращается, когда пользователь подтверждает действие (например, нажал кнопку "OK", "Сохранить" и т.д.).
+        // Если форма была закрыта с результатом OK, выполняется код внутри блока if.
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            // using, чтобы автоматически вызвать Dispose() для формы.
             using (var form = new AddTransacttion())
             {
                 if (form.ShowDialog() == DialogResult.OK)
@@ -65,7 +74,7 @@ namespace Finance
 
         private void btnReport_Click(object sender, EventArgs e)
         {
-            var form = new Report();
+            var form = new Report(transactions);
             form.ShowDialog();
         }
 
