@@ -55,9 +55,26 @@ namespace Finance.Forms
                 .Select(grp => new
                 {
                     Category = grp.Key,
-                    Income = grp.Where(t => t.Type == "Доход"),
+                    Income = grp.Where(t => t.Type == "Доход").Sum(t => t.Amount),
+                    Expense = grp.Where(t => t.Type == "Расход").Sum(t => t.Amount)
+                }).ToList();
 
-                });
+            // Any() - Проверка наличия элементов в коллекции.
+            if (categories.Any())
+            {
+                return;
+            }
+
+            decimal maxValue = categories.Select(c => Math.Max(c.Income, c.Expense)).Max();
+            float scale = 150f / (float)maxValue; // шкала до 150 пикселей
+            int x = startX;
+
+            foreach (var cat in categories)
+            {
+                // Доход
+                int incomeHeight = (int)(cat.Income * (decimal)scale);
+                g.FillRectangle(incomeBrush, x, chart - incomeHeight, barVidth, incomeHeight); 
+            }
         }
     }
 }
