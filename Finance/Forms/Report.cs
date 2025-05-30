@@ -40,5 +40,24 @@ namespace Finance.Forms
             labelExpenditure.Text = expenditure.ToString("0.00");
             labelBalance.Text = balance.ToString("0.00");
         }
+
+        private void DrawChart(Graphics g)
+        {
+            var chart = 200;
+            var barVidth = 40;
+            var spacing = 20;
+            var startX = 50;
+            var font = new Font("Segoe UI", 9);
+            var incomeBrush = Brushes.Green;
+            var expenditureBrush = Brushes.Red;
+            var categories = transactionOut
+                .GroupBy(t => t.Category)
+                .Select(grp => new
+                {
+                    Category = grp.Key,
+                    Income = grp.Where(t => t.Type == "Доход"),
+
+                });
+        }
     }
 }
