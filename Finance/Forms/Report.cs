@@ -39,6 +39,8 @@ namespace Finance.Forms
             labelIncome.Text = income.ToString("0.00");
             labelExpenditure.Text = expenditure.ToString("0.00");
             labelBalance.Text = balance.ToString("0.00");
+
+
         }
 
         private void DrawChart(Graphics g)
@@ -80,7 +82,23 @@ namespace Finance.Forms
                 int expenseHeight = (int)(cat.Expense * (decimal)scale);
                 g.FillRectangle(expenditureBrush, x + barVidth + 5, chart - expenseHeight - 15, barVidth, expenseHeight);
                 g.DrawString("↓",font,expenditureBrush,x + barVidth + 15,chart - expenseHeight);
+
+                // Категории
+                g.DrawString(cat.Category, font, Brushes.Black, x, chart + 10);
+                x += (barVidth * 2) + spacing;
             }
+
+            g.DrawString("Гистограмма доходов и расходов по категориям", new Font("Segoe UI", 12, FontStyle.Bold),Brushes.Black,20,chart - 180);
+        }
+
+        private void Report_Paint(object sender, PaintEventArgs e)
+        {
+            if (transactionOut == null || transactionOut.Count == 0)
+            {
+                return;
+            }
+
+            DrawChart(e.Graphics);
         }
     }
 }

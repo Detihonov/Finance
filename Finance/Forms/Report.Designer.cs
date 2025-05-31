@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dateBeginningPeriod = new System.Windows.Forms.DateTimePicker();
-            this.beginningPeriod = new System.Windows.Forms.Label();
+            this.labelBalance = new System.Windows.Forms.Label();
+            this.labelExpenditure = new System.Windows.Forms.Label();
+            this.labelIncome = new System.Windows.Forms.Label();
+            this.viewReport = new System.Windows.Forms.Button();
             this.dateEndPeriod = new System.Windows.Forms.DateTimePicker();
             this.endPeriod = new System.Windows.Forms.Label();
-            this.viewReport = new System.Windows.Forms.Button();
-            this.labelIncome = new System.Windows.Forms.Label();
-            this.labelExpenditure = new System.Windows.Forms.Label();
-            this.labelBalance = new System.Windows.Forms.Label();
+            this.beginningPeriod = new System.Windows.Forms.Label();
+            this.dateBeginningPeriod = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,21 +55,42 @@
             this.panel1.Size = new System.Drawing.Size(340, 159);
             this.panel1.TabIndex = 0;
             // 
-            // dateBeginningPeriod
+            // labelBalance
             // 
-            this.dateBeginningPeriod.Location = new System.Drawing.Point(4, 5);
-            this.dateBeginningPeriod.Name = "dateBeginningPeriod";
-            this.dateBeginningPeriod.Size = new System.Drawing.Size(200, 20);
-            this.dateBeginningPeriod.TabIndex = 0;
+            this.labelBalance.AutoSize = true;
+            this.labelBalance.Location = new System.Drawing.Point(3, 100);
+            this.labelBalance.Name = "labelBalance";
+            this.labelBalance.Size = new System.Drawing.Size(44, 13);
+            this.labelBalance.TabIndex = 6;
+            this.labelBalance.Text = "Баланс";
             // 
-            // beginningPeriod
+            // labelExpenditure
             // 
-            this.beginningPeriod.AutoSize = true;
-            this.beginningPeriod.Location = new System.Drawing.Point(211, 11);
-            this.beginningPeriod.Name = "beginningPeriod";
-            this.beginningPeriod.Size = new System.Drawing.Size(89, 13);
-            this.beginningPeriod.TabIndex = 1;
-            this.beginningPeriod.Text = "Начало периода";
+            this.labelExpenditure.AutoSize = true;
+            this.labelExpenditure.Location = new System.Drawing.Point(3, 80);
+            this.labelExpenditure.Name = "labelExpenditure";
+            this.labelExpenditure.Size = new System.Drawing.Size(43, 13);
+            this.labelExpenditure.TabIndex = 5;
+            this.labelExpenditure.Text = "Расход";
+            // 
+            // labelIncome
+            // 
+            this.labelIncome.AutoSize = true;
+            this.labelIncome.Location = new System.Drawing.Point(3, 63);
+            this.labelIncome.Name = "labelIncome";
+            this.labelIncome.Size = new System.Drawing.Size(39, 13);
+            this.labelIncome.TabIndex = 4;
+            this.labelIncome.Text = "Доход";
+            // 
+            // viewReport
+            // 
+            this.viewReport.Location = new System.Drawing.Point(6, 125);
+            this.viewReport.Name = "viewReport";
+            this.viewReport.Size = new System.Drawing.Size(200, 26);
+            this.viewReport.TabIndex = 3;
+            this.viewReport.Text = "Построить отчёт";
+            this.viewReport.UseVisualStyleBackColor = true;
+            this.viewReport.Click += new System.EventHandler(this.viewReport_Click);
             // 
             // dateEndPeriod
             // 
@@ -87,42 +108,21 @@
             this.endPeriod.TabIndex = 1;
             this.endPeriod.Text = "Конец периода";
             // 
-            // viewReport
+            // beginningPeriod
             // 
-            this.viewReport.Location = new System.Drawing.Point(6, 125);
-            this.viewReport.Name = "viewReport";
-            this.viewReport.Size = new System.Drawing.Size(200, 26);
-            this.viewReport.TabIndex = 3;
-            this.viewReport.Text = "Построить отчёт";
-            this.viewReport.UseVisualStyleBackColor = true;
-            this.viewReport.Click += new System.EventHandler(this.viewReport_Click);
+            this.beginningPeriod.AutoSize = true;
+            this.beginningPeriod.Location = new System.Drawing.Point(211, 11);
+            this.beginningPeriod.Name = "beginningPeriod";
+            this.beginningPeriod.Size = new System.Drawing.Size(89, 13);
+            this.beginningPeriod.TabIndex = 1;
+            this.beginningPeriod.Text = "Начало периода";
             // 
-            // labelIncome
+            // dateBeginningPeriod
             // 
-            this.labelIncome.AutoSize = true;
-            this.labelIncome.Location = new System.Drawing.Point(3, 63);
-            this.labelIncome.Name = "labelIncome";
-            this.labelIncome.Size = new System.Drawing.Size(39, 13);
-            this.labelIncome.TabIndex = 4;
-            this.labelIncome.Text = "Доход";
-            // 
-            // labelExpenditure
-            // 
-            this.labelExpenditure.AutoSize = true;
-            this.labelExpenditure.Location = new System.Drawing.Point(3, 80);
-            this.labelExpenditure.Name = "labelExpenditure";
-            this.labelExpenditure.Size = new System.Drawing.Size(43, 13);
-            this.labelExpenditure.TabIndex = 5;
-            this.labelExpenditure.Text = "Расход";
-            // 
-            // labelBalance
-            // 
-            this.labelBalance.AutoSize = true;
-            this.labelBalance.Location = new System.Drawing.Point(3, 100);
-            this.labelBalance.Name = "labelBalance";
-            this.labelBalance.Size = new System.Drawing.Size(44, 13);
-            this.labelBalance.TabIndex = 6;
-            this.labelBalance.Text = "Баланс";
+            this.dateBeginningPeriod.Location = new System.Drawing.Point(4, 5);
+            this.dateBeginningPeriod.Name = "dateBeginningPeriod";
+            this.dateBeginningPeriod.Size = new System.Drawing.Size(200, 20);
+            this.dateBeginningPeriod.TabIndex = 0;
             // 
             // Report
             // 
@@ -132,6 +132,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Report";
             this.Text = "Report";
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Report_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
