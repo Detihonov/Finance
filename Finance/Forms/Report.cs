@@ -73,7 +73,13 @@ namespace Finance.Forms
             {
                 // Доход
                 int incomeHeight = (int)(cat.Income * (decimal)scale);
-                g.FillRectangle(incomeBrush, x, chart - incomeHeight, barVidth, incomeHeight); 
+                g.FillRectangle(incomeBrush, x, chart - incomeHeight, barVidth, incomeHeight);
+                g.DrawString("↑", font,incomeBrush, x + 10, chart - incomeHeight - 15);
+
+                // Расход
+                int expenseHeight = (int)(cat.Expense * (decimal)scale);
+                g.FillRectangle(expenditureBrush, x + barVidth + 5, chart - expenseHeight - 15, barVidth, expenseHeight);
+                g.DrawString("↓",font,expenditureBrush,x + barVidth + 15,chart - expenseHeight);
             }
         }
     }
