@@ -8,6 +8,7 @@ namespace Finance.Data
 {
     public class UserSettings
     {
-
+        public string UserName { get; set; } = "Пользователь";
+        public string CurrentSymbol { get; set; } = "₽";
     }
 }
