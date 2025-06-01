@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finance.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace Finance.Forms
 {
     public partial class Settings : Form
     {
+        private SettingsRepository settingsRepository;
+        private UserSettings userSettings;
         public Settings()
         {
             InitializeComponent();
+            coboxUser.Items.AddRange(new[] { "₽", "$", "€", "¥", "₤" });
         }
     }
 }

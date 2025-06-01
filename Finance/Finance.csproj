@@ -83,6 +83,7 @@
     <Compile Include="Data\CategoryRepository.cs" />
     <Compile Include="Data\SettingsRepository.cs" />
     <Compile Include="Data\TransactionRepository.cs" />
+    <Compile Include="Data\UserSettings.cs" />
     <Compile Include="Forms\AddTransacttion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Report.resx">
       <DependentUpon>Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Settings.resx">
+      <DependentUpon>Settings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
