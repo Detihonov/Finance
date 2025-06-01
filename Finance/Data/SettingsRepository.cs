@@ -23,5 +23,11 @@ namespace Finance.Data
             return JsonSerializer.Deserialize<UserSettings>(json);
         }
 
+
+        public void Save(UserSettings settings)
+        {
+            var json = JsonSerializer.Serialize(settings);
+            File.WriteAllText(_filePath, json);
+        }
     }
 }
