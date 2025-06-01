@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\CategoryRepository.cs" />
+    <Compile Include="Data\SettingsRepository.cs" />
     <Compile Include="Data\TransactionRepository.cs" />
     <Compile Include="Forms\AddTransacttion.cs">
       <SubType>Form</SubType>

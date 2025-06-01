@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Finance.Data
 {
-    public class SettingsRepository
+    public class UserSettings
     {
-        private readonly string _filePath = @"Save\settings.json";
+
     }
 }
