@@ -10,7 +10,7 @@ namespace Finance.Data
 {
     public class SettingsRepository
     {
-        private readonly string _filePath = @"Save\settings.json";
+        private readonly string _filePath = "Save\\settings.json";
 
         public UserSettings Load()
         {
@@ -23,11 +23,15 @@ namespace Finance.Data
             return JsonSerializer.Deserialize<UserSettings>(json);
         }
 
-
         public void Save(UserSettings settings)
         {
             var json = JsonSerializer.Serialize(settings);
             File.WriteAllText(_filePath, json);
+        }
+
+        public void ClearTransaction()
+        {
+            File.WriteAllText("Save\\transaction.json", "[]");
         }
     }
 }
