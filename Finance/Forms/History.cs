@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Finance.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,15 @@ namespace Finance.Forms
 {
     public partial class History : Form
     {
+        private TransactionRepository transactionRepository = new();
         public History()
         {
             InitializeComponent();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
