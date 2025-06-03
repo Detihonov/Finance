@@ -21,6 +21,11 @@ namespace Finance.Forms
             coboxUser.Items.AddRange(new[] { "₽", "$", "€", "¥", "₤" });
         }
 
+        private void Settings_Load(object sender, EventArgs e)
+        {
+            //LoadSettings();
+        }
+
         private void LoadSettings()
         {
             userSettings = settingsRepository.Load();

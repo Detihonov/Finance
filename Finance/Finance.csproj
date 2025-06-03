@@ -114,6 +114,9 @@
     <Compile Include="Forms\Settings.Designer.cs">
       <DependentUpon>Settings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ChartHelper.cs" />
+    <Compile Include="Helpers\JsonStorage.cs" />
+    <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Transaction.cs" />
     <Compile Include="Other\SQLtoJSON.cs" />
     <Compile Include="Program.cs" />
@@ -154,8 +157,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Helpers\" />
-    <Folder Include="Resources\" />
+    <Folder Include="Resources\icons\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
