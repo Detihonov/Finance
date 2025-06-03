@@ -36,9 +36,10 @@
             this.labelBalance = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnReport = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.btnHistory = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.btnSettings = new System.Windows.Forms.Button();
+            this.btnExperiment = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -99,6 +100,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnExperiment);
             this.panel3.Controls.Add(this.btnReport);
             this.panel3.Controls.Add(this.btnSettings);
             this.panel3.Controls.Add(this.btnHistory);
@@ -117,6 +119,16 @@
             this.btnReport.Text = "Отчёт";
             this.btnReport.UseVisualStyleBackColor = true;
             this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Location = new System.Drawing.Point(3, 106);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(333, 32);
+            this.btnSettings.TabIndex = 0;
+            this.btnSettings.Text = "Настройки";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // btnHistory
             // 
@@ -138,15 +150,15 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // btnSettings
+            // btnExperiment
             // 
-            this.btnSettings.Location = new System.Drawing.Point(3, 106);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(333, 32);
-            this.btnSettings.TabIndex = 0;
-            this.btnSettings.Text = "Настройки";
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            this.btnExperiment.Location = new System.Drawing.Point(5, 142);
+            this.btnExperiment.Name = "btnExperiment";
+            this.btnExperiment.Size = new System.Drawing.Size(333, 32);
+            this.btnExperiment.TabIndex = 1;
+            this.btnExperiment.Text = "Эксперемент";
+            this.btnExperiment.UseVisualStyleBackColor = true;
+            this.btnExperiment.Click += new System.EventHandler(this.btnExperiment_Click);
             // 
             // Main
             // 
@@ -179,6 +191,7 @@
         private System.Windows.Forms.Button btnHistory;
         private System.Windows.Forms.Button btnReport;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Button btnExperiment;
     }
 }
 

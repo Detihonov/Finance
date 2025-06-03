@@ -83,5 +83,11 @@ namespace Finance
             var form = new Settings();
             form.ShowDialog();
         }
+
+        private void btnExperiment_Click(object sender, EventArgs e)
+        {
+            var form = new Example();
+            form.ShowDialog();
+        }
     }
 }

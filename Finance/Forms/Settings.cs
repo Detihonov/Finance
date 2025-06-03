@@ -13,7 +13,7 @@ namespace Finance.Forms
 {
     public partial class Settings : Form
     {
-        private SettingsRepository settingsRepository;
+        private SettingsRepository settingsRepository = new SettingsRepository();
         private UserSettings userSettings;
         public Settings()
         {
@@ -23,7 +23,7 @@ namespace Finance.Forms
 
         private void Settings_Load(object sender, EventArgs e)
         {
-            //LoadSettings();
+            LoadSettings();
         }
 
         private void LoadSettings()

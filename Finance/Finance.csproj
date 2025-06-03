@@ -90,6 +90,12 @@
     <Compile Include="Forms\AddTransacttion.Designer.cs">
       <DependentUpon>AddTransacttion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Example.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Example.Designer.cs">
+      <DependentUpon>Example.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\History.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\AddTransacttion.resx">
       <DependentUpon>AddTransacttion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Example.resx">
+      <DependentUpon>Example.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
