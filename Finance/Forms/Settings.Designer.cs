@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
+            this.brnClear = new System.Windows.Forms.Button();
+            this.bntExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -75,10 +77,11 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.brnClear);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Location = new System.Drawing.Point(8, 82);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 100);
+            this.panel2.Size = new System.Drawing.Size(266, 62);
             this.panel2.TabIndex = 1;
             // 
             // btnSave
@@ -91,11 +94,32 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // brnClear
+            // 
+            this.brnClear.Location = new System.Drawing.Point(4, 32);
+            this.brnClear.Name = "brnClear";
+            this.brnClear.Size = new System.Drawing.Size(94, 23);
+            this.brnClear.TabIndex = 1;
+            this.brnClear.Text = "Очистить";
+            this.brnClear.UseVisualStyleBackColor = true;
+            this.brnClear.Click += new System.EventHandler(this.brnClear_Click);
+            // 
+            // bntExit
+            // 
+            this.bntExit.Location = new System.Drawing.Point(11, 150);
+            this.bntExit.Name = "bntExit";
+            this.bntExit.Size = new System.Drawing.Size(94, 23);
+            this.bntExit.TabIndex = 1;
+            this.bntExit.Text = "Закрыть";
+            this.bntExit.UseVisualStyleBackColor = true;
+            this.bntExit.Click += new System.EventHandler(this.brnClear_Click);
+            // 
             // Settings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(281, 450);
+            this.Controls.Add(this.bntExit);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Settings";
@@ -115,5 +139,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button brnClear;
+        private System.Windows.Forms.Button bntExit;
     }
 }

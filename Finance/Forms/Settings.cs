@@ -33,7 +33,17 @@ namespace Finance.Forms
             userSettings.UserName = textName.Text;
             userSettings.CurrentSymbol = coboxUser.SelectedItem.ToString();
             settingsRepository.Save(userSettings);
-            MessageBox.Show("Настройки сохранены","Успех",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            MessageBox.Show("Настройки сохранены", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void brnClear_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Удалить все операции?", "Подтверждение", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (result == DialogResult.Yes) 
+            { 
+                settingsRepository.ClearTransaction();
+                MessageBox.Show("Всё удалено", "Готово", MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
     }
 }
