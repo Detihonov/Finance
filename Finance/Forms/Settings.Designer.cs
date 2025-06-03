@@ -81,7 +81,7 @@
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Location = new System.Drawing.Point(8, 82);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(266, 62);
+            this.panel2.Size = new System.Drawing.Size(266, 58);
             this.panel2.TabIndex = 1;
             // 
             // btnSave
@@ -106,13 +106,13 @@
             // 
             // bntExit
             // 
-            this.bntExit.Location = new System.Drawing.Point(11, 150);
+            this.bntExit.Location = new System.Drawing.Point(11, 144);
             this.bntExit.Name = "bntExit";
             this.bntExit.Size = new System.Drawing.Size(94, 23);
             this.bntExit.TabIndex = 1;
             this.bntExit.Text = "Закрыть";
             this.bntExit.UseVisualStyleBackColor = true;
-            this.bntExit.Click += new System.EventHandler(this.brnClear_Click);
+            this.bntExit.Click += new System.EventHandler(this.bntExit_Click);
             // 
             // Settings
             // 

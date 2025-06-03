@@ -45,5 +45,10 @@ namespace Finance.Forms
                 MessageBox.Show("Всё удалено", "Готово", MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
         }
+
+        private void bntExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
