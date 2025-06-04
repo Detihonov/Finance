@@ -22,6 +22,7 @@ namespace Finance.Forms
             comboFilter.Items.Clear();
             comboFilter.Items.AddRange(new[] { "Все", "Доход", "Расход" });
             comboFilter.SelectedIndex = 0;
+
             dataGridTable.AutoGenerateColumns = true;
 
             LoadHistory();

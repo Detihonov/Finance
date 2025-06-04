@@ -16,7 +16,7 @@ namespace Finance.Forms
     {
         public Transaction transaction { get; private set; }
         private List<Transaction> transactionsForm = new();
-        private TransactionRepository rep = new();
+        private TransactionRepository repositorySave = new();
         public AddTransacttion(List<Transaction> transactions)
         {
             InitializeComponent(); // Инициализатор формы
@@ -53,7 +53,7 @@ namespace Finance.Forms
                 Description = textDescription.Text,
             };
 
-            rep.Add(transaction);
+            repositorySave.Add(transaction);
 
             this.DialogResult = DialogResult.OK;
             this.Close();
