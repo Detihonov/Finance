@@ -11,7 +11,7 @@ namespace Finance.Data
 {
     public class TransactionRepository
     {
-        private readonly string _filePath = "Save\\transaction.json";   
+        private readonly string _filePath = @"transaction.json";   
         public List<Transaction> LoadAll()
         {
             if (!File.Exists(_filePath))
@@ -32,7 +32,8 @@ namespace Finance.Data
 
         public void SaveAll(List<Transaction> transactions)
         {
-            string json = JsonSerializer.Serialize(transactions);
+            string json = JsonSerializer.Serialize(transactions, new JsonSerializerOptions { WriteIndented = true});
+            File.WriteAllText(_filePath, json);
         }
 
         public void Clear()

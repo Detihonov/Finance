@@ -15,12 +15,13 @@ namespace Finance
 {
     public partial class Main : Form
     {
-        private List<Transaction> transactions = new List<Transaction> ();
-        private TransactionRepository repository = new TransactionRepository();
+        private List<Transaction> transactions = new();
+        private TransactionRepository repository = new();
         public Main()
         {
             
             InitializeComponent();
+            LoadTransaction();
         }
 
         private void LoadTransaction()
@@ -33,7 +34,7 @@ namespace Finance
         private void ShowRecentTransaction()
         {
             listBoxRecent.Items.Clear();
-            var lastFive = transactions.OrderByDescending(t => t.Date).Take(5);
+            var lastFive = transactions.OrderByDescending(t => t.Date).Take(10);
             foreach (var t in lastFive)
             {
                 listBoxRecent.Items.Add($"{t.Date:dd.MM.yyyy} - {t.Category}({t.Type}):{t.Amount:C}");
@@ -56,7 +57,7 @@ namespace Finance
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // using, чтобы автоматически вызвать Dispose() для формы.
-            using (var form = new AddTransacttion())
+            using (var form = new AddTransacttion(transactions))
             {
                 if (form.ShowDialog() == DialogResult.OK)
                 {
@@ -64,6 +65,7 @@ namespace Finance
                 }
             }
         }
+
 
         private void btnHistory_Click(object sender, EventArgs e)
         {

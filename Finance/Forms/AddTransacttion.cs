@@ -1,4 +1,5 @@
-﻿using Finance.Models;
+﻿using Finance.Data;
+using Finance.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,10 +15,13 @@ namespace Finance.Forms
     public partial class AddTransacttion : Form
     {
         public Transaction transaction { get; private set; }
-        public AddTransacttion()
+        private List<Transaction> transactionsForm = new();
+        private TransactionRepository rep = new();
+        public AddTransacttion(List<Transaction> transactions)
         {
             InitializeComponent(); // Инициализатор формы
             ComboTypeCategory();
+            transactionsForm = transactions;
         }
 
         private void ComboTypeCategory()
@@ -42,12 +46,14 @@ namespace Finance.Forms
 
             transaction = new Transaction
             {
-                Type = coboxType.SelectedIndex.ToString(),
-                Category = coboxCategory.SelectedIndex.ToString(),
+                Type = coboxType.Text,
+                Category = coboxCategory.Text,
                 Amount = amount,
                 Date = datePicker.Value.Date,
                 Description = textDescription.Text,
             };
+
+            rep.Add(transaction);
 
             this.DialogResult = DialogResult.OK;
             this.Close();

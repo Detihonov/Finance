@@ -10,7 +10,7 @@ namespace Finance.Data
 {
     public class SettingsRepository
     {
-        private readonly string _filePath = "Save\\settings.json";
+        private readonly string _filePath = "settings.json";
 
         public UserSettings Load()
         {
@@ -31,7 +31,7 @@ namespace Finance.Data
 
         public void ClearTransaction()
         {
-            File.WriteAllText("Save\\transaction.json", "[]");
+            File.WriteAllText("transaction.json", "[]");
         }
     }
 }

@@ -14,9 +14,11 @@ namespace Finance.Forms
     public partial class Example : Form
     {
         private List<Transaction> transactions = new List<Transaction>();
+        private List<Transaction> transactionsForm = new();
         public Example()
         {
             InitializeComponent();
+            transactionsForm = transactions; 
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -41,7 +43,8 @@ namespace Finance.Forms
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            OpenFormInPanel(new AddTransacttion());
+            
+            OpenFormInPanel(new AddTransacttion(transactionsForm));
         }
 
         private void btnHistory_Click(object sender, EventArgs e)

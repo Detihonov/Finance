@@ -40,7 +40,7 @@
             // 
             this.btnOpen.Location = new System.Drawing.Point(6, 461);
             this.btnOpen.Name = "btnOpen";
-            this.btnOpen.Size = new System.Drawing.Size(277, 31);
+            this.btnOpen.Size = new System.Drawing.Size(329, 31);
             this.btnOpen.TabIndex = 0;
             this.btnOpen.Text = "Настройки";
             this.btnOpen.UseVisualStyleBackColor = true;
@@ -50,14 +50,14 @@
             // 
             this.panelContainer.Location = new System.Drawing.Point(6, 13);
             this.panelContainer.Name = "panelContainer";
-            this.panelContainer.Size = new System.Drawing.Size(277, 338);
+            this.panelContainer.Size = new System.Drawing.Size(329, 338);
             this.panelContainer.TabIndex = 1;
             // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(6, 495);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(277, 31);
+            this.btnClose.Size = new System.Drawing.Size(329, 31);
             this.btnClose.TabIndex = 0;
             this.btnClose.Text = "Закрыть форму";
             this.btnClose.UseVisualStyleBackColor = true;
@@ -67,7 +67,7 @@
             // 
             this.btnAdd.Location = new System.Drawing.Point(6, 357);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(277, 31);
+            this.btnAdd.Size = new System.Drawing.Size(329, 31);
             this.btnAdd.TabIndex = 2;
             this.btnAdd.Text = "Добавить";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // 
             this.btnHistory.Location = new System.Drawing.Point(6, 392);
             this.btnHistory.Name = "btnHistory";
-            this.btnHistory.Size = new System.Drawing.Size(277, 31);
+            this.btnHistory.Size = new System.Drawing.Size(329, 31);
             this.btnHistory.TabIndex = 1;
             this.btnHistory.Text = "История";
             this.btnHistory.UseVisualStyleBackColor = true;
@@ -87,7 +87,7 @@
             // 
             this.btnReport.Location = new System.Drawing.Point(6, 427);
             this.btnReport.Name = "btnReport";
-            this.btnReport.Size = new System.Drawing.Size(277, 31);
+            this.btnReport.Size = new System.Drawing.Size(329, 31);
             this.btnReport.TabIndex = 2;
             this.btnReport.Text = "Отчёт";
             this.btnReport.UseVisualStyleBackColor = true;
@@ -97,7 +97,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 534);
+            this.ClientSize = new System.Drawing.Size(347, 534);
             this.Controls.Add(this.btnReport);
             this.Controls.Add(this.btnOpen);
             this.Controls.Add(this.btnHistory);
