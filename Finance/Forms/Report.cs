@@ -17,12 +17,12 @@ namespace Finance.Forms
         private TransactionRepository repository = new TransactionRepository();
         private List<Transaction> transaction;
         private List<Transaction> transactionOut;
-        public Report(List<Transaction> transaction)
+        public Report(List<Transaction> transactions)
         {
             InitializeComponent();
             dateBeginningPeriod.Value = DateTime.Now.AddMonths(-1);
             dateEndPeriod.Value = DateTime.Now;
-            this.transaction = transaction;
+            this.transaction = transactions;
         }
 
         private void viewReport_Click(object sender, EventArgs e)
@@ -33,25 +33,27 @@ namespace Finance.Forms
             transactionOut = repository.LoadAll().Where(t => t.Date >= start && t.Date <= end).ToList();
 
             decimal income = transactionOut.Where(t => t.Type == "Доход").Sum(t => t.Amount);
-            decimal expenditure = transactionOut.Where(t => t.Type == "Расход").Sum(t => t.Amount);
-            decimal balance = income - expenditure;
+            decimal expense = transactionOut.Where(t => t.Type == "Расход").Sum(t => t.Amount);
+            decimal balance = income - expense;
 
-            labelIncome.Text = income.ToString("0.00");
-            labelExpenditure.Text = expenditure.ToString("0.00");
-            labelBalance.Text = balance.ToString("0.00");
+            labelIncome.Text = "Доход: " + income.ToString("0.00");
+            labelExpenditure.Text = "Расход: " + expense.ToString("0.00");
+            labelBalance.Text = "Баланс: " + balance.ToString("0.00");
 
-
+            // panel1.Controls.Clear();
+            Invalidate();
         }
 
         private void DrawChart(Graphics g)
         {
-            var chart = 200;
-            var barVidth = 40;
+            var chartTop = 200;
+            var barWidth = 40;
             var spacing = 20;
             var startX = 50;
             var font = new Font("Segoe UI", 9);
             var incomeBrush = Brushes.Green;
-            var expenditureBrush = Brushes.Red;
+            var expenseBrush = Brushes.Red;
+
             var categories = transactionOut
                 .GroupBy(t => t.Category)
                 .Select(grp => new
@@ -62,7 +64,7 @@ namespace Finance.Forms
                 }).ToList();
 
             // Any() - Проверка наличия элементов в коллекции.
-            if (categories.Any())
+            if (!categories.Any())
             {
                 return;
             }
@@ -75,20 +77,20 @@ namespace Finance.Forms
             {
                 // Доход
                 int incomeHeight = (int)(cat.Income * (decimal)scale);
-                g.FillRectangle(incomeBrush, x, chart - incomeHeight, barVidth, incomeHeight);
-                g.DrawString("↑", font,incomeBrush, x + 10, chart - incomeHeight - 15);
+                g.FillRectangle(incomeBrush, x, chartTop - incomeHeight, barWidth, incomeHeight);
+                g.DrawString("↑", font,incomeBrush, x + 10, chartTop - incomeHeight - 15);
 
                 // Расход
                 int expenseHeight = (int)(cat.Expense * (decimal)scale);
-                g.FillRectangle(expenditureBrush, x + barVidth + 5, chart - expenseHeight - 15, barVidth, expenseHeight);
-                g.DrawString("↓",font,expenditureBrush,x + barVidth + 15,chart - expenseHeight);
+                g.FillRectangle(expenseBrush, x + barWidth + 5, chartTop - expenseHeight - 15, barWidth, expenseHeight);
+                g.DrawString("↓", font, expenseBrush, x + barWidth + 15, chartTop - expenseHeight - 15);
 
                 // Категории
-                g.DrawString(cat.Category, font, Brushes.Black, x, chart + 10);
-                x += (barVidth * 2) + spacing;
+                g.DrawString(cat.Category, font, Brushes.Black, x, chartTop + 10);
+                x += (barWidth * 2) + spacing;
             }
 
-            g.DrawString("Гистограмма доходов и расходов по категориям", new Font("Segoe UI", 12, FontStyle.Bold),Brushes.Black,20,chart - 180);
+            g.DrawString("Гистограмма доходов и расходов по категориям", new Font("Segoe UI", 12, FontStyle.Bold), Brushes.Black, 20, chartTop - 180);
         }
 
         private void Report_Paint(object sender, PaintEventArgs e)
