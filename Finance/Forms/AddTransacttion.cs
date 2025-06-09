@@ -20,8 +20,8 @@ namespace Finance.Forms
         public AddTransacttion(List<Transaction> transactions)
         {
             InitializeComponent(); // Инициализатор формы
-            ComboTypeCategory();
             transactionsForm = transactions;
+            ComboTypeCategory();
         }
 
         private void ComboTypeCategory()
@@ -43,6 +43,16 @@ namespace Finance.Forms
                 MessageBox.Show("Введите корректную сумму", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return; 
             }
+            if (coboxType.Text == "Расход")
+            {
+                decimal expense = transactionsForm.Where(t => t.Type == "Доход").Sum(t => t.Amount);
+                if ( expense < amount)
+                {
+                    MessageBox.Show("Денег недостаточно", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+            }
+
 
             transaction = new Transaction
             {
