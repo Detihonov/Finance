@@ -81,5 +81,10 @@ namespace Finance.Forms
         {
             this.Close();
         }
+
+        private void comboFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateTable();
+        }
     }
 }

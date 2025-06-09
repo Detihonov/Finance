@@ -30,10 +30,10 @@
         {
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboFilter = new System.Windows.Forms.ComboBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.dataGridTable = new System.Windows.Forms.DataGridView();
-            this.comboFilter = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridTable)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +54,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 70);
             this.panel1.TabIndex = 0;
+            // 
+            // comboFilter
+            // 
+            this.comboFilter.FormattingEnabled = true;
+            this.comboFilter.Location = new System.Drawing.Point(88, 41);
+            this.comboFilter.Name = "comboFilter";
+            this.comboFilter.Size = new System.Drawing.Size(106, 21);
+            this.comboFilter.TabIndex = 1;
+            this.comboFilter.SelectedIndexChanged += new System.EventHandler(this.comboFilter_SelectedIndexChanged);
             // 
             // btnClose
             // 
@@ -82,14 +91,6 @@
             this.dataGridTable.Name = "dataGridTable";
             this.dataGridTable.Size = new System.Drawing.Size(704, 354);
             this.dataGridTable.TabIndex = 1;
-            // 
-            // comboFilter
-            // 
-            this.comboFilter.FormattingEnabled = true;
-            this.comboFilter.Location = new System.Drawing.Point(88, 41);
-            this.comboFilter.Name = "comboFilter";
-            this.comboFilter.Size = new System.Drawing.Size(106, 21);
-            this.comboFilter.TabIndex = 1;
             // 
             // History
             // 
