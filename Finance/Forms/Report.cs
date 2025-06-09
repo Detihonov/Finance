@@ -32,8 +32,8 @@ namespace Finance.Forms
 
             transactionOut = repository.LoadAll().Where(t => t.Date >= start && t.Date <= end).ToList();
 
-            decimal income = transactionOut.Where(t => t.Type == "Доход").Sum(t => t.Amount);
-            decimal expense = transactionOut.Where(t => t.Type == "Расход").Sum(t => t.Amount);
+            decimal income = transaction.Where(t => t.Type == "Доход").Sum(t => t.Amount);
+            decimal expense = transaction.Where(t => t.Type == "Расход").Sum(t => t.Amount);
             decimal balance = income - expense;
 
             labelIncome.Text = "Доход: " + income.ToString("0.00");
@@ -42,6 +42,7 @@ namespace Finance.Forms
 
             // panel1.Controls.Clear();
             Invalidate();
+            panelChart.Invalidate();
         }
 
         private void DrawChart(Graphics g)
@@ -91,15 +92,15 @@ namespace Finance.Forms
             }
 
             g.DrawString("Гистограмма доходов и расходов по категориям", new Font("Segoe UI", 12, FontStyle.Bold), Brushes.Black, 20, chartTop - 180);
+            panelChart.AutoScrollMinSize = new Size(x,panelChart.Height);
         }
 
-        private void Report_Paint(object sender, PaintEventArgs e)
+        private void panelChart_Paint(object sender, PaintEventArgs e)
         {
             if (transactionOut == null || transactionOut.Count == 0)
             {
                 return;
             }
-
             DrawChart(e.Graphics);
         }
     }

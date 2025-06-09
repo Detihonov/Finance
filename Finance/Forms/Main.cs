@@ -43,8 +43,10 @@ namespace Finance
 
         private void UpdateBalance()
         {
-            decimal balance = transactions.Sum(t => t.Type == "Доход" ? t.Amount : -t.Amount);
-            labelBalance.Text = $"Баланс: {balance:C}";
+            decimal income = transactions.Where(t => t.Type == "Доход").Sum(t => t.Amount);
+            decimal expense = transactions.Where(t => t.Type == "Расход").Sum(t => t.Amount);
+
+            labelBalance.Text = $"Баланс: {income - expense:C}";
         }
 
         // form.ShowDialog()

@@ -37,7 +37,11 @@
             this.endPeriod = new System.Windows.Forms.Label();
             this.beginningPeriod = new System.Windows.Forms.Label();
             this.dateBeginningPeriod = new System.Windows.Forms.DateTimePicker();
+            this.chartGroup = new System.Windows.Forms.GroupBox();
+            this.panelChart = new System.Windows.Forms.Panel();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.panel1.SuspendLayout();
+            this.chartGroup.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,9 +54,9 @@
             this.panel1.Controls.Add(this.endPeriod);
             this.panel1.Controls.Add(this.beginningPeriod);
             this.panel1.Controls.Add(this.dateBeginningPeriod);
-            this.panel1.Location = new System.Drawing.Point(9, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 279);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(340, 159);
+            this.panel1.Size = new System.Drawing.Size(593, 159);
             this.panel1.TabIndex = 0;
             // 
             // labelBalance
@@ -124,17 +128,36 @@
             this.dateBeginningPeriod.Size = new System.Drawing.Size(200, 20);
             this.dateBeginningPeriod.TabIndex = 0;
             // 
+            // chartGroup
+            // 
+            this.chartGroup.Controls.Add(this.panelChart);
+            this.chartGroup.Location = new System.Drawing.Point(12, 13);
+            this.chartGroup.Name = "chartGroup";
+            this.chartGroup.Size = new System.Drawing.Size(593, 265);
+            this.chartGroup.TabIndex = 1;
+            this.chartGroup.TabStop = false;
+            this.chartGroup.Text = "Гистограмма";
+            // 
+            // panelChart
+            // 
+            this.panelChart.Location = new System.Drawing.Point(5, 15);
+            this.panelChart.Name = "panelChart";
+            this.panelChart.Size = new System.Drawing.Size(582, 244);
+            this.panelChart.TabIndex = 0;
+            this.panelChart.Paint += new System.Windows.Forms.PaintEventHandler(this.panelChart_Paint);
+            // 
             // Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(361, 450);
+            this.ClientSize = new System.Drawing.Size(617, 450);
+            this.Controls.Add(this.chartGroup);
             this.Controls.Add(this.panel1);
             this.Name = "Report";
             this.Text = "Report";
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.Report_Paint);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.chartGroup.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -150,5 +173,8 @@
         private System.Windows.Forms.Button viewReport;
         private System.Windows.Forms.Label labelBalance;
         private System.Windows.Forms.Label labelExpenditure;
+        private System.Windows.Forms.GroupBox chartGroup;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Panel panelChart;
     }
 }
