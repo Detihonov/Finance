@@ -44,7 +44,7 @@ namespace Finance.Forms
                 filtered = allTransaction.Where(t => t.Type == filter).ToList();
             }
 
-            dataGridTable.Rows.Clear();
+            dataGridTable.DataSource = new object();
             dataGridTable.DataSource = filtered;
         }
 
@@ -58,9 +58,12 @@ namespace Finance.Forms
                 string category = dataGridTable.Rows[index].Cells[2].Value.ToString();
                 decimal amount = decimal.Parse(dataGridTable.Rows[index].Cells[3].Value.ToString());
 
+                DateTime date = DateTime.Parse(dataStr);
+
                 var toRemote = allTransaction.FirstOrDefault(t => 
-                               t.Date.ToShortDateString() == dataStr 
-                               && t.Type == type && t.Category == category 
+                               t.Date.Date == date.Date 
+                               && t.Type == type 
+                               && t.Category == category 
                                && t.Amount == amount
                 );
 
@@ -68,8 +71,9 @@ namespace Finance.Forms
                 {
                     allTransaction.Remove(toRemote);
                     repository.SaveAll(allTransaction);
-                    UpdateTable();
                 }
+
+                UpdateTable();
             }
         }
 
