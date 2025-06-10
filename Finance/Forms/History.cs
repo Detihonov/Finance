@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -50,6 +51,13 @@ namespace Finance.Forms
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            if (dataGridTable.SelectedRows.Count == 0)
+            { 
+                MessageBox.Show("Выберите всю строку целиком !!!");
+                dataGridTable.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+                return;
+            }
+
             if (dataGridTable.SelectedRows.Count > 0)
             {
                 int index = dataGridTable.SelectedRows[0].Index;
@@ -86,5 +94,6 @@ namespace Finance.Forms
         {
             UpdateTable();
         }
+        
     }
 }
